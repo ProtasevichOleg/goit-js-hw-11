@@ -1,3 +1,5 @@
+// jsModules/components/loadMoreButton.js
+
 import { refs } from '../..';
 
 export function showLoadMoreButton() {

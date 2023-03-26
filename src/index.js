@@ -1,3 +1,5 @@
+// index.js
+
 import configureNotiflix from './jsModules/utils/configureNotiflix.js';
 import {
   onSearchFormSubmit,
@@ -7,7 +9,7 @@ import {
 export const refs = {
   searchFormEl: document.querySelector('.search-form'),
   loadMoreBtnEl: document.querySelector('.load-more'),
-  galleryEl: (gallery = document.querySelector('.gallery')),
+  galleryEl: document.querySelector('.gallery'),
   searchQuery: '',
   currentPage: 1,
 };
