@@ -1,0 +1,157 @@
+@import '../../node_modules/notiflix/dist/notiflix-3.2.6.min.css';
+
+/* Reset Styles */
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+/* Block: container */
+.container {
+  padding: 0 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* Block: header */
+header {
+  background-color: rgb(75, 60, 187);
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Block: main */
+main {
+  background-color: rgb(248, 246, 243);
+  padding: 20px 0;
+}
+
+/* Block: search-form */
+.search-form {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 30vw;
+  min-width: 200px;
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+.search-form__input {
+  padding: 10px;
+  max-width: 100%;
+  width: 100%;
+  min-height: 14px;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+
+.search-form__submit {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  padding: 21px;
+  cursor: pointer;
+  background-color: transparent;
+  background-image: url('../images/magnifying-glass.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+}
+
+.search-form__submit:hover,
+.search-form__submit:focus {
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+/* Block: gallery */
+.gallery {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.gallery__item {
+  margin: 0 auto;
+  flex-basis: calc((100% - 60px) / 4);
+}
+
+.gallery__link {
+  color: black;
+  text-decoration: none;
+  display: block;
+  overflow: hidden;
+}
+
+.gallery__image {
+  display: block;
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  transition: transform 250ms linear;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.gallery__image:hover {
+  transform: scale(1.2);
+}
+
+.gallery__thumb {
+  overflow: hidden;
+}
+
+/* Block: info */
+.info {
+  background-color: aliceblue;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.info__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+/* Block: end-gallery */
+.end-gallery {
+  color: rgb(75, 60, 187);
+  margin: 0 auto;
+  font-size: 50px;
+}
+
+.load-more {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 30px;
+  font-size: 18px;
+  background-color: rgb(75, 60, 187);
+  color: white;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.load-more:hover {
+  background-color: rgb(90, 75, 202);
+}
+
+.hidden {
+  display: none;
+}

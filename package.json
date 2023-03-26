@@ -4,7 +4,7 @@
   "description": "",
   "homepage": "https://ProtasevichOleg.github.io/goit-js-hw-11",
   "scripts": {
-    "start": "parcel src/*.html --port 2013",
+    "start": "parcel src/*.html --port 201",
     "build": "parcel build src/*.html --public-url /goit-js-hw-11/"
   },
   "repository": {
@@ -18,7 +18,9 @@
     "url": "https://github.com/goitacademy/parcel-project-template/issues"
   },
   "dependencies": {
-    "modern-normalize": "^1.1.0"
+    "modern-normalize": "^1.1.0",
+    "notiflix": "^3.2.6",
+    "simplelightbox": "^2.12.1"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
