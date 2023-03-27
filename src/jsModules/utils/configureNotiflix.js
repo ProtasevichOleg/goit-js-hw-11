@@ -1,5 +1,3 @@
-// jsModules/utils/configureNotiflix.js
-
 import Notiflix from 'notiflix';
 
 export default Notiflix.Notify.init({

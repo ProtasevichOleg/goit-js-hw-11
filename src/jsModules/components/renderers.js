@@ -1,5 +1,3 @@
-// jsModules/components/renderers.js
-
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { showLoadMoreButton } from './loadMoreButton.js';

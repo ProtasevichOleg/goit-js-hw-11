@@ -1,5 +1,3 @@
-// index.js
-
 import configureNotiflix from './jsModules/utils/configureNotiflix.js';
 import {
   onSearchFormSubmit,
@@ -12,6 +10,7 @@ export const refs = {
   galleryEl: document.querySelector('.gallery'),
   searchQuery: '',
   currentPage: 1,
+  totalImagesFetched: 0,
 };
 
 refs.searchFormEl.addEventListener('submit', onSearchFormSubmit);
