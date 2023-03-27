@@ -1,3 +1,4 @@
+// lsModules/components/fetchers.js
 import Notiflix from 'notiflix';
 import { fetchImagesFromPixabayApi } from '../api/pixabayApiService.js';
 import { renderImages } from './renderers.js';
@@ -10,27 +11,27 @@ export async function fetchImages() {
       refs.searchQuery,
       refs.currentPage
     );
-    if (hits.length === 0) {
-      if (refs.currentPage > 1) {
-        Notiflix.Notify.failure(
-          "We're sorry, but you've reached the end of search results."
-        );
-      } else {
-        Notiflix.Notify.failure(
-          'Sorry, there are no images matching your search query. Please try again.'
-        );
-      }
+
+    if (hits.length === 0 && refs.currentPage === 1) {
+      Notiflix.Notify.failure(
+        'Sorry, there are no images matching your search query. Please try again.'
+      );
       return { totalHits: 0, error: true };
     }
+
+    const displayedImages = refs.currentPage * 40;
+
+    if (hits.length === 0 || displayedImages >= totalHits) {
+      Notiflix.Notify.info(
+        "We're sorry, but you've reached the end of search results."
+      );
+      hideLoadMoreButton();
+      return { totalHits: 0, error: true };
+    }
+
     return { images: hits, totalHits };
   } catch (error) {
-    if (error.response && error.response.status === 400) {
-      Notiflix.Notify.failure(
-        "We're sorry, but you've reached the end of search results"
-      );
-    } else {
-      Notiflix.Notify.failure('An error occurred. Please try again.');
-    }
+    Notiflix.Notify.failure('An error occurred. Please try again.');
     console.error(error);
     return { error: true };
   }
